@@ -33,4 +33,5 @@ class Battery:
         return self.__status
 
     def notification(self, message="'Battery Full'"):
-        status, output = commands.getstatusoutput("notify-send -i "+self.__imgpath+" "+ message)
+        wrap_message = "'"+self.__imgpath+"'"
+        status, output = commands.getstatusoutput("notify-send -i "+wrap_message+" "+ message)
